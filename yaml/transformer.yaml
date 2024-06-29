@@ -1,0 +1,20 @@
+data:
+  mean: [0.5070751592371323, 0.48654887331495095, 0.4409178433670343]
+  std: [0.2673342858792401, 0.2564384629170883, 0.27615047132568404]
+  batch_size: 128
+
+model:
+  type: 'transformer'  # 改为 'image_transformer'
+  in_channels: 3 # 输入图片的通道
+  patch_size: 16  # 设定 patch 尺寸，例如 4x4
+  emb_size: 768 # 嵌入维数
+  img_size: 224  # 设定图像尺寸，例如 32x32
+  depth: 6 # transformer层数
+  num_heads: 8 # 头数
+  num_classes: 100 # 分类数
+
+training:
+  learning_rate: 0.0001
+  num_epochs: 30
+  save_path: './save_model_path/transformer'  # 修改保存路径
+  device: 'cuda' # or 'cpu'
